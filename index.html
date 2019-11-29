@@ -8,18 +8,44 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <div class="container">          
-        <div class="wrapper">
-                <p id="one">Password Generator</p> 
-    <form class="form">
+<div class="container">          
+    <div class="wrapper">
+    <p id="one">Password Generator</p> 
+        <form class="form" id="gform">
             <p id="two">Generate an Awesome Password !!!</p> 
-        <label for="gpassword"></label>
-        <input type="text" id="gpassword" name="gpassword">
-        <button class="button">Generate Password</button> 
+            <label for="gpassword"></label>
+            <input type="text" id="gpassword" name="gpassword">
+            <button class="btn" id="clipboard">
+            <i class="far fa-clipboard"></i>
+            </button>   
+                <button class="button" id="generate">Generate Password</button>
+                <div class="settings">
+                    <div class="setting">
+                        <label for="length">Password length</label>
+                        <input type="number" id="length" min="8" max="128" value="128">
+                    </div>
+                <div class="setting">
+                    <label for="lowercase">Include lowercase letters</label>
+                    <input type="checkbox" id="lowercase" checked>
+                </div>
+                <div class="setting">
+                    <label for="uppercase">Include uppercase letters</label>
+                    <input type="checkbox" id="uppercase" checked>
+                </div>
+                <div class="setting">
+                    <label for="numbers">Include numbers letters</label>
+                    <input type="checkbox" id="numbers" checked>
+                </div>
+                <div class="setting">
+                    <label for="symbols">Include symbols letters</label>
+                    <input type="checkbox" id="symbols" checked>
+                    </div>    
+            </div>
+        </form> 
      </div>  
-    </div>    
+</div>    
 
-    </form>
+    
      
 
 

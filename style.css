@@ -1,5 +1,7 @@
 body {
     background-image: url(../HW3/assets/images/U7ol0xb.jpg);
+    color: #ffffff
+
 }
 
 .container {
@@ -8,7 +10,8 @@ body {
     height: 400px;
     background-image: url(../HW3/assets/images/OFK4aYT.jpg);  
     margin-left: 390px;
-    margin-top: 153px;   
+    margin-top: 153px;
+    box-shadow: 5px 10px #0a0606;   
 }
 
 .form {
@@ -24,7 +27,7 @@ body {
 }
 
  #one {
-     color: gainsboro;
+     color: #ffffff;
      font-family: 'Times New Roman', Times, serif;
      font-size: 34px;
      margin-top: -93px;
@@ -34,7 +37,7 @@ body {
  }
 
 #two {
-    color: gainsboro;
+    color: #ffffff;
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
 
