@@ -19,10 +19,29 @@ generateEl.addEventListener("click",() => {
  
     
 
+    formEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);  
 
     console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols);
  
-})
+});
+
+function generatePassword(lower,upper,number,symbols,length) {
+   var generatedPassword = "";
+
+   var typesCount = lower + upper + number + symbols;
+
+   console.log("typesCount:", typesCount);
+
+   var typesArr = [lower, upper, number, symbols];
+
+   console.log("typesArr:", typesArr);
+
+
+};
+
+
+
+
 // Heres the link to the charcord chart that I used http://www.net-comber.com/charset.html
 
 function  lowerCase() {
