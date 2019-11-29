@@ -7,18 +7,23 @@ var symbolsEl = document.getElementById("symbols");
 var clipboardEl = document.getElementById("clipboard");
 var generateEl = document.getElementById("generate");
 
+var generateFunc = {lower: lowerCase, upper: upperCase, number: numberGen, symbols: symbolGen };
+
 
 generateEl.addEventListener("click",() => {
-    var length = +lengthEl.value; 
+    var length = +lengthEl.value;
+    var checkForLower = lowercaseEl.checked; 
+    var checkForUpper = uppercaseEl.checked;
+    var checkForNumbers = numbersEl.checked;
+    var checkForSymbols = symbolsEl.checked; 
+ 
+    
 
-    console.log(typeof length);
+
+    console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols);
  
 })
-
-
-var generates = {lower: lowerCase, upper: upperCase, number: numberGen, symbols: symbolGen}
-
-// heres where The link to the charcord chart  that Used http://www.net-comber.com/charset.html
+// Heres the link to the charcord chart that I used http://www.net-comber.com/charset.html
 
 function  lowerCase() {
     return String.fromCharCode(Math.floor(Math.random() *26) + 97 );
