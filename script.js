@@ -1,6 +1,6 @@
 var formEl = document.getElementById("gform");
 var lengthEl = document.getElementById("length");
-var lowercaseEl = document.getElementById("uppercase");
+var uppercaseEl = document.getElementById("uppercase");
 var lowercaseEl = document.getElementById("lowercase");
 var numbersEl = document.getElementById("numbers");
 var symbolsEl = document.getElementById("symbols");
@@ -11,30 +11,48 @@ var generateFunc = {lower: lowerCase, upper: upperCase, number: numberGen, symbo
 
 
 generateEl.addEventListener("click",() => {
-    var length = +lengthEl.value;
-    var checkForLower = lowercaseEl.checked; 
-    var checkForUpper = uppercaseEl.checked;
-    var checkForNumbers = numbersEl.checked;
-    var checkForSymbols = symbolsEl.checked; 
+   var length = +lengthEl.value;
+   var checkForLower = lowercaseEl.checked; 
+   var checkForUpper = uppercaseEl.checked;
+   var checkForNumbers = numbersEl.checked;
+   var checkForSymbols = symbolsEl.checked; 
  
     
 
-    formEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);  
+   
+   formEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);
 
-    console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols);
- 
+   console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols);
+
 });
 
 function generatePassword(lower,upper,number,symbols,length) {
+   
    var generatedPassword = "";
 
    var typesCount = lower + upper + number + symbols;
 
    console.log("typesCount:", typesCount);
 
-   var typesArr = [lower, upper, number, symbols];
+   var typesArr = [{lower}, {upper}, {number}, {symbols}].filter (item => Object.values(item)[0]);
 
    console.log("typesArr:", typesArr);
+
+   if (typesCount === 0) {
+      return '';
+   }
+   for( var i = 0; i < length;i += typesCount) {
+      typesArr.forEach(type => {
+         var funcName = Object.keys(type)[0];
+         console.log( "funcName:", funcName);
+         
+         generatedPassword += generateFunc[funcName] ();
+      });
+        var finalPassword =generatedPassword.slice(0, length);
+        
+        return finalPassword
+
+   }
 
 
 };
@@ -65,8 +83,6 @@ function  lowerCase() {
 
 
  function  symbolGen() {
-    return String.fromCharCode(Math.floor(Math.random() *6) + 58 ); 
- }
- console.log(symbolGen());
-
- 
+   return String.fromCharCode(Math.floor(Math.random() *6) + 58 ); 
+}
+console.log(symbolGen());
