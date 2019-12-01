@@ -1,10 +1,9 @@
-var formEl = document.getElementById("gform");
+var defaultEl = document.getElementById("default");
 var lengthEl = document.getElementById("length");
 var uppercaseEl = document.getElementById("uppercase");
 var lowercaseEl = document.getElementById("lowercase");
 var numbersEl = document.getElementById("numbers");
 var symbolsEl = document.getElementById("symbols");
-var clipboardEl = document.getElementById("clipboard");
 var generateEl = document.getElementById("generate");
 
 var generateFunc = {lower: lowerCase, upper: upperCase, number: numberGen, symbols: symbolGen };
@@ -20,7 +19,7 @@ generateEl.addEventListener("click",() => {
     
 
    
-   formEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);
+   defaultEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);
 
    console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols);
 
@@ -56,9 +55,6 @@ function generatePassword(lower,upper,number,symbols,length) {
 
 
 };
-
-
-
 
 // Heres the link to the charcord chart that I used http://www.net-comber.com/charset.html
 
