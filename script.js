@@ -1,4 +1,4 @@
-var defaultEl = document.getElementById("default");
+var passwordEl = document.getElementById("gpassword");
 var lengthEl = document.getElementById("length");
 var uppercaseEl = document.getElementById("uppercase");
 var lowercaseEl = document.getElementById("lowercase");
@@ -19,9 +19,9 @@ generateEl.addEventListener("click",() => {
     
 
    
-   defaultEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);
+   passwordEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);
 
-   console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols);
+   console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols, length);
 
 });
 
@@ -52,6 +52,7 @@ function generatePassword(lower,upper,number,symbols,length) {
         return finalPassword
 
    }
+   
 
 
 };
