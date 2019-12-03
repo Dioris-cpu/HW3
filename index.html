@@ -12,10 +12,12 @@
     <div class="wrapper">
     <p id="one">Password Generator</p> 
         <form class="form" id="gform">
-            <p id="two">Generate an Awesome Password !!!</p> 
+            <p id="two">Generate an Awesome Password !!!</p>
             <label for="gpassword"></label>
-            <input type="text" id="gpassword" name="gpassword">
+            <span id="gpassword">
+            <textarea name="password" id="password" cols="30" rows="10"></textarea>
             <button class="button" id="generate">Generate Password</button>
+            </span>
                 <div class="settings">
                     <div class="setting">
                         <label for="length">Password length</label>

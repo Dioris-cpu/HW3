@@ -43,12 +43,17 @@ body {
 
 }
 
-#default {
-    color: #0a0606;
-    position: relative;
-    margin-right: 2px;
-    
+#gpassword {
+    color:#af4744;   
 
 }
+
+#password {
+    width: 194px;
+    height: 17px;
+}
+
+
+
 
 

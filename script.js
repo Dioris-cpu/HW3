@@ -20,6 +20,7 @@ generateEl.addEventListener("click",() => {
 
    
    passwordEl.innerText = generatePassword(checkForLower, checkForUpper, checkForNumbers, checkForSymbols,length);
+   
 
    console.log(checkForLower, checkForUpper, checkForNumbers, checkForSymbols, length);
 
@@ -60,19 +61,19 @@ function generatePassword(lower,upper,number,symbols,length) {
 // Heres the link to the charcord chart that I used http://www.net-comber.com/charset.html
 
 function  lowerCase() {
-    return String.fromCharCode(Math.floor(Math.random() *26) + 97 );
+    return String.fromCharCode(Math.floor(Math.random() *26) + 97 ) ;
  
  }
  console.log(lowerCase());
 
  function  upperCase() {
-    return String.fromCharCode(Math.floor(Math.random() *26) + 65 );
+    return String.fromCharCode(Math.floor(Math.random() *26) + 65 ) ;
  
  }
  console.log(upperCase());
 
  function  numberGen() {
-    return String.fromCharCode(Math.floor(Math.random() *10) + 48 );
+    return String.fromCharCode(Math.floor(Math.random() *10) + 48 ) ;
  
  }
  console.log(numberGen());
@@ -80,6 +81,6 @@ function  lowerCase() {
 
 
  function  symbolGen() {
-   return String.fromCharCode(Math.floor(Math.random() *6) + 58 ); 
+   return String.fromCharCode(Math.floor(Math.random() *6) + 58 ) ; 
 }
 console.log(symbolGen());
