@@ -1,3 +1,16 @@
+.container{
+    margin-left: 450px ;
+    margin-top: 150px;
+    border: solid #e4b9b9;
+    height: 344px;
+    width: 300px;
+}
+
 body {
-    background-image: url(../HW3/assets/images/U7ol0xb.jpg);
+    background-color: #e4b9b9;
+}
+
+#display {
+    width: 280px;
+    height: 30px;
 }
