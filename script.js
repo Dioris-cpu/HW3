@@ -4,12 +4,16 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
 var symbols = ["!", "@", "#", "$", "%", "^", "&", "*"];
 var submitElt = document.getElementById("submit");
 var textDisplayElt = document.getElementById("display")
+var lowercaseCheck = lowercase.checked;
+var clipBoardElt = document.getElementById("clipboard");
 
 
 submitElt.addEventListener("click", function(){
       var passwordLength = 20;
       textDisplayElt.value = generatePassword(passwordLength);
     });
+ 
+
 
 function generatePassword(passwordLength) {
 
