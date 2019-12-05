@@ -13,4 +13,17 @@ body {
 #display {
     width: 280px;
     height: 30px;
+    color: #7907ef;
+    background-color: #abaaad;
+}
+
+#submit {
+    width: 290px;
+    background-color: #7907ef;
+    color: #abaaad;
+}
+
+#length {
+    background-color: #abaaad ;
+    color: #7907ef;
 }
