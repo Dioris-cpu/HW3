@@ -6,43 +6,51 @@ var submitElt = document.getElementById("submit");
 var textDisplayElt = document.getElementById("display")
 var lowercaseCheck = lowercase.checked;
 var clipBoardElt = document.getElementById("clipboard");
+var lengthElt = document.getElementById("length");
 
 
 submitElt.addEventListener("click", function(){
-      var passwordLength = 120;
+      var passwordLength = lengthElt.value;
       textDisplayElt.value = generatePassword(passwordLength);
-    });
+    });  
+
  
 
 
 function generatePassword(passwordLength) {
-
+   var passwordLength = lengthElt.value;
+   alert(passwordLength)
    var password = "";
+   var numLowerCase = Math.floor(Math.random() * passwordLength) 
 
-   for(var i = 0; i < passwordLength; ++i){
-    var length = lowercase.length;
-    var lowerLetters = Math.floor(Math.random() * 26);
+   for(var i = 0; i < numLowerCase; ++i){
+    //var length = lowercase.length;
+    var lowerLetters = Math.floor(Math.random() * 25);
     var lower = lowercase[lowerLetters];
     password = password + lower; 
    };
 
-   for(var i = 0; i < passwordLength; ++i){
-      var length = uppercase.length;
-      var upperLetters = Math.floor(Math.random() * 26);
+   var numUpperCase = Math.floor(Math.random() * passwordLength - numLowerCase) 
+
+   for(var i = 0; i < numUpperCase; ++i){
+      //var length = uppercase.length;
+      var upperLetters = Math.floor(Math.random() * 25);
       var upper = uppercase[upperLetters];
       password = password + upper; 
      };
-     
-     for(var i = 0; i < passwordLength; ++i){
-      var length = numbers.length;
-      var randomNumbers = Math.floor(Math.random() * 10);
+     var numNumber = Math.floor(Math.random() * passwordLength - numLowerCase - numUpperCase);  
+
+     for(var i = 0; i < numNumber; ++i){
+      //var length = numbers.length;
+      var randomNumbers = Math.floor(Math.random() * 9);
       var nums = numbers[randomNumbers];
       password = password + nums; 
      };
-     
-     for(var i = 0; i < passwordLength; ++i){
-      var length = symbols.length;
-      var symbolsGen = Math.floor(Math.random() * 8);
+     var numSymbols = Math.floor(Math.random() * passwordLength - numLowerCase - numUpperCase - numNumber);  
+
+     for(var i = 0; i < numSymbols; ++i){
+      //var length = symbols.length;
+      var symbolsGen = Math.floor(Math.random() * 7);
       var sym = symbols[symbolsGen];
       password = password + sym; 
      } 
@@ -53,6 +61,5 @@ function generatePassword(passwordLength) {
 
 }
 
-var passwordLength = 120;
 var password = generatePassword(passwordLength);
 
